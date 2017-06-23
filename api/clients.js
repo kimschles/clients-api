@@ -24,4 +24,12 @@ router.post('/', (req, res, next) => {
   });
 });
 
+router.delete('/:id', (req, res) => {
+  queries.deleteClient(req.params.id).then(() => {
+    res.json({
+      deleted: true
+    });
+  });
+});
+
 module.exports = router;

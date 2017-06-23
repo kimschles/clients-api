@@ -7,7 +7,10 @@ module.exports = {
   getOneClient(id) {
     return knex('clients').where('id', id).first();
   },
-  createClient(newClient){
+  createClient(newClient) {
     return knex('clients').insert(newClient, '*');
+  },
+  deleteClient(id) {
+    return knex('clients').where('id', id).del();
   }
 };
