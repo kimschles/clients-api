@@ -8,4 +8,14 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', isValidId, (req, res, next) => {
+  queries.getOne(req.params.id).then(client => {
+    if(client) {
+      res.json(client);
+    } else {
+      next();
+    }
+  });
+});
+
 module.exports = router;
