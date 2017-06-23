@@ -1,8 +1,8 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('client', (table) => {
+  return knex.schema.createTable('clients', (table) => {
     table.increments();
     table.text('name');
-    table.integer('phone number');
+    table.bigint('phone_number');
     table.text('email');
     table.text('services_requested')
   });
