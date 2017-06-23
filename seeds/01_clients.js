@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-  return knex('clients').del()
+  return knex.schema.raw('TRUNCATE TABLE clients RESTART IDENTITY CASCADE')
     .then(function() {
       return knex('clients').insert([{
         name: 'Kim Schlesinger',
