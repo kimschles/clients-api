@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/:id', isValidId, (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   queries.getOne(req.params.id).then(client => {
     if(client) {
       res.json(client);
