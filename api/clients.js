@@ -18,4 +18,10 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
+router.post('/', (req, res, next) => {
+  queries.createClient(req.body).then(clients => {
+    res.json(clients[0])
+  });
+});
+
 module.exports = router;

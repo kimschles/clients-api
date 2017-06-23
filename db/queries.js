@@ -6,5 +6,8 @@ module.exports = {
   },
   getOneClient(id) {
     return knex('clients').where('id', id).first();
+  },
+  createClient(newClient){
+    return knex('clients').insert(newClient, '*');
   }
 };
